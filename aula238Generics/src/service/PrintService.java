@@ -11,21 +11,24 @@ import java.util.List;
  *
  * @author Ilha Edição
  */
-public class PrintService {
+
+// minha classe esta parametrizada com tipo T - generics
+
+public class PrintService<T> {   // pode ser qualquer letra mas esse T = type ou tipo
     
     
-    private List<Integer> list = new ArrayList<>();  // ela tem internamente uma lista de numeros inteiros
+    private List<T> list = new ArrayList<>();  // ela tem internamente uma lista de numeros inteiros
     
     
     
     
     
-    public void addValue(Integer value){   // operacao addValue recebe arg inteiro
+    public void addValue(T value){   // operacao addValue recebe arg inteiro
         list.add(value);  // add na lista
         
     }
     
-    public Integer first(){   // devolve primeiro elemento que esta armazenado no printservice
+    public T first(){   // devolve primeiro elemento que esta armazenado no printservice
         if(list.isEmpty()){  // programacao defenciva - se a lista esta vazia
             throw new IllegalStateException("List is empty");  // se tiver vazia mostra mensagem 
         }
